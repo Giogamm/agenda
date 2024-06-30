@@ -2,15 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Card from "../components/Card.astro";
+const accessToken =
+  "GZdgP-lS_ySVlxYXz6BiTa8rhgEdw6m_cRpIWRlmevcmnAjeeWT4-zaeJ0tTFpG6";
+const url = `https://api.qr-code-generator.com/v1/create?access-token=${accessToken}&data=URL-a-codificar`;
+
+fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data); // Aquí puedes manejar la respuesta de la API
+    // Normalmente, la API devolverá un objeto JSON con la información del código QR generado
+  })
+  .catch((error) => console.error("Error al obtener el código QR:", error));
 ---
 
 <Layout title="Agenda">
-
   <main class="bg-white shadow-lg" transition:name="card">
     <h2 class="text-center py-2 text-2xl text-sky-500">Alumnos</h2>
 
-	  <Card />
-</main>
-
-  
+    <Card />
+  </main>
 </Layout>
