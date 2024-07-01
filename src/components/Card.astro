@@ -1,25 +1,38 @@
-<section
-  class="p-4 bg-gray-300 mb-4 inline-flex rounded-sm shadow-md md:ml-2 px-auto mx-4"
- >
-  <div class="flex-shrink-0 mb-4 ">
-    <img
-      src="/abdiel.jpg"
-      alt="Foto de Edgar Omar Duarte Neri"
-      class="w-24 h-24 object-cover rounded-full"
-	  transition:name="imagen"
-    />
-  </div>
-  <div class="flex flex-col items-center">
-    <h3 class="px-3 font-bold text-2xl">Edgar Omar Duarte Neri</h3>
-    <span class="px-3 text-center py-2">Código QR:</span>
-    <div class="flex items-center content-center flex-col gap-4">
-		<img src="./chelaQr.png" alt="" class="h-32 w-32">
-      <a href="/chela">
-        <button
-          class="px-4 py-2 bg-cyan-600 rounded-lg text-white shadow-lg hover:scale-105 transition-transform"
-          >¿No puedes escanear el qr? click Aquí</button
-        >
-      </a>
-    </div>
+---
+import personas from "../data/personas.json";
+const defaultImage = "/default.jpg"; // Ruta de la imagen por defecto, ajusta según la ubicación real en tu proyecto
+const defaultQr = "/defaultQr.png"; // Ruta del QR por defecto, ajusta según la ubicación real en tu proyecto
+---
+
+<section class="p-4 bg-gray-100 mb-4 rounded-sm shadow-md px-auto md:mx-4 md:">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {
+      personas.map((persona) => (
+        <div class="bg-white p-4 rounded-md shadow-md" key-data={persona.id} transition:name={`card-${persona.id}`}>
+          <img
+            src={persona.imagen || defaultImage}
+            alt={`Foto de ${persona.nombre}`}
+            class="w-24 h-24 object-cover rounded-full mx-auto"
+            transition:name={`imagen-${persona.id}`}
+          />
+          <div class="flex flex-col items-center gap-3 mt-4">
+            <h3 class="px-3 font-bold text-2xl">{persona.nombre}</h3>
+            <span class="px-3 text-center py-2">Código QR:</span>
+            <div class="flex items-center content-center flex-col gap-4">
+              <img
+                src={persona.qr || defaultQr}
+                alt={`QR de ${persona.nombre}`}
+                class="h-32 w-32"
+              />
+              <a href={`/persona/${persona.id}`}>
+                <button class="px-4 py-2 bg-cyan-600 rounded-lg text-white shadow-lg hover:scale-105 transition-transform">
+                  ¿No puedes escanear el QR? Haz clic aquí
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
   </div>
 </section>

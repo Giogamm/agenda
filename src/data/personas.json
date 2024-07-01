@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "nombre": "Arturo Emmanuel Peñaloza Gómez",
+    "edad": 17,
+    "sexo": "Masculino",
+    "grado": "4-A",
+    "especialidad": "Programación",
+    "caracteristicas": "Alto y pelo lacio",
+    "imagen": "/arturo.jpg",
+    "qr": "/arturoQr.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Magaly Elizabeth Cruz Vasquez",
+    "edad": 16,
+    "sexo": "Femenino",
+    "grado": "4-A",
+    "especialidad": "Programación",
+    "caracteristicas": "Morena, pelo ondulado",
+    "imagen": "/magaly.jpg",
+    "qr": "/magalyQr.png"
+  },
+  {
+    "id": 3,
+    "nombre": "María Fernanda Olea Hernández",
+    "edad": 16,
+    "sexo": "Femenino",
+    "grado": "4-A",
+    "especialidad": "Programación",
+    "caracteristicas": "Chaparrita y pelo lacio",
+    "imagen": "/maria.jpg",
+    "qr": "/mariaQr.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Luis Antonio Reyes Mejía",
+    "edad": 16,
+    "sexo": "Masculino",
+    "grado": "4-A",
+    "especialidad": "Programación",
+    "caracteristicas": "Alto, güero, pelo chino, flaco",
+    "imagen": "/luis.jpg",
+    "qr": "/luisQr.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Angel Abdiel Chela Vargas",
+    "edad": 17,
+    "sexo": "Masculino",
+    "grado": "4 Semestre",
+    "especialidad": "Programación",
+    "caracteristicas": "Chico alto, rolliso, con lentes, me gusta trabajar, estudiar y descansar",
+    "imagen": "/abdiel.jpg",
+    "qr": "/chelaQr.png"
+  },
+{
+    "id": 6,
+    "nombre": "Djiibrel Alessandro Rebolledo Sotelo",
+    "edad": 17,
+    "sexo": "Masculino",
+    "grado": "4 Semestre",
+    "especialidad": "Programación",
+    "caracteristicas": "Chico alto, guero",
+    "imagen": "/djiibrel.jpg",
+    "qr": "/djiibrelQr.png"
+}
+]

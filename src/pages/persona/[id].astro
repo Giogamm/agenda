@@ -1,0 +1,50 @@
+---
+import personas from "../../data/personas.json";
+
+const personaId = Number(Astro.params.id);
+const persona = personas.find((p) => p.id === personaId);
+if (!persona) {
+  throw new Error(`Persona con ID ${personaId} no encontrada`);
+}
+
+const defaultImage = "/default.jpg"; // Imagen por defecto
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  return personas.map((persona) => ({
+    params: { id: persona.id.toString() },
+  }));
+}
+---
+
+<Layout title={`Agenda: ${persona.nombre}`}>
+  <div class="bg-white shadow-xl mx-5 my-3 sm:p-10" transition:name={`card-${persona.id}`}>
+    <div class="flex justify-center items-center m-3">
+      <img
+        src={persona.imagen || defaultImage}
+        alt={persona.nombre}
+        class="w-36 object-cover rounded-md mr-4 h-auto sm:h-36 mt-3"
+        transition:name={`imagen-${persona.id}`}
+      />
+      <section class="text-center">
+        <h3 class="text-3xl my-3">{persona.nombre}</h3>
+      </section>
+    </div>
+    <footer class="text-center mt-3">
+      <p><span class="font-bold">Edad:</span> {persona.edad} años</p>
+      <p><span class="font-bold">Sexo:</span> {persona.sexo}</p>
+      <p><span class="font-bold">Grado:</span> {persona.grado}</p>
+      <p><span class="font-bold">Especialidad:</span> {persona.especialidad}</p>
+      <p>
+        <span class="font-bold">Características:</span>
+        {persona.caracteristicas}
+      </p>
+      <a href="/">
+        <button
+          class="my-6 bg-sky-500 text-black rounded-md py-3 px-5 hover:scale-105 duration-300 hover:bg-sky-300 transition-all"
+          >Regresar</button
+        >
+      </a>
+    </footer>
+  </div>
+</Layout>
